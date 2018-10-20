@@ -6,11 +6,12 @@ from sklearn.preprocessing import StandardScaler
 
 
 class PCA():
-    def __init__(self):
+    def __init__(self, variance=None):
         self.scaler = None
         self.v = None
         self.explained_variance_ = None
         self.explained_variance_ratio_ = None
+        self.variance_frac = variance
     
     def fit(self, x):
         # Scale the data
@@ -21,10 +22,19 @@ class PCA():
         s, vt = la.svd(xs, full_matrices=False)[1:]
         self.v = vt.T
 
+        if self.variance_frac is not None:
+            evr = s**2 / np.sum(s**2)
+            cum_explained_var = np.cumsum(evr)
+            inc = np.where(cum_explained_var < 0.95)
+            ind = np.max(inc) + 2
+            self.v = self.v[:, :ind]
+        else:
+            ind = s.shape[0]
+
         # Save the explained variance
         var = s ** 2
-        self.explained_variance_ = var
-        self.explained_variance_ratio_ = var / np.sum(var)
+        self.explained_variance_ = var[:ind]
+        self.explained_variance_ratio_ = var[:ind] / np.sum(var)
 
         return self
     
@@ -42,3 +52,11 @@ class PCA():
         cum_explained_var = np.cumsum(self.explained_variance_ratio_)
         inc = np.where(cum_explained_var < 0.95)
         return np.max(inc) + 1
+
+
+class KMeans():
+    def __init__(self):
+        raise NotImplementedError
+    
+    def fit(self, x):
+        raise NotImplementedError
