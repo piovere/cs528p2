@@ -24,7 +24,7 @@ class PCA():
         # Save the explained variance
         var = s ** 2
         self.explained_variance_ = var
-        self.explained_variance_ratio_ = np.cumsum(var) / np.sum(var)
+        self.explained_variance_ratio_ = var / np.sum(var)
 
         return self
     
