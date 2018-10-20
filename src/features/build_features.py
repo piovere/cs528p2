@@ -37,3 +37,8 @@ class PCA():
     def fit_transform(self, x):
         self.fit(x)
         self.transform(x)
+
+    def to_explain_variance_frac(self, f):
+        cum_explained_var = np.cumsum(self.explained_variance_ratio_)
+        inc = np.where(cum_explained_var < 0.95)
+        return np.max(inc) + 1
