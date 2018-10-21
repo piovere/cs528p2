@@ -58,5 +58,5 @@ class KMeans():
     def __init__(self):
         raise NotImplementedError
     
-    def fit(self, x):
+    def fit(self, data, k=3, num_starts=10):
         raise NotImplementedError
