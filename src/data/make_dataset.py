@@ -55,7 +55,7 @@ def main(input_filepath, output_filepath):
 
     # Save to file
     logger.info(f'Writing processed data to {output_filepath}')
-    df_clean.to_csv(output_filepath)
+    df_clean.to_csv(output_filepath, index=False)
 
 
 if __name__ == '__main__':
