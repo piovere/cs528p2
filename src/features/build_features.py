@@ -56,7 +56,72 @@ class PCA():
 
 class KMeans():
     def __init__(self):
-        raise NotImplementedError
+        self.seeds_ = None
+        self.k_ = None
+        self.error_ = None
+        self.conv_count_ = None
     
     def fit(self, data, k=3, num_starts=10):
-        raise NotImplementedError
+        self.k_ = k
+        # Pick `k` initial seeds
+        self.seeds_ = self.pick_random_seeds(data)
+
+        # Make labels for initial guess
+        labels = self.make_labels(data)
+
+        # Calculate error from intial guess
+        self.error_ = self.error(data, labels)
+
+        for i in range(num_starts):
+            seeds = self.pick_random_seeds(data)
+            conv_count = 0
+            old_seeds = np.zeros_like(seeds)
+            while not(np.allclose(seeds, old_seeds)):
+                conv_count += 1
+                old_seeds = np.copy(seeds)
+                labels = self.make_labels(data, seeds)
+                seeds = self.new_seeds(data, labels)
+            # See if the new seeds are better
+            if self.error(data, labels) < self.error_:
+                self.seeds_ = seeds
+                self.error_ = self.error(data, labels)
+    
+    def predict(self, data):
+        l = self.make_labels(data)
+        return l
+    
+    def distances(self, data, seeds=None):
+        if seeds is None:
+            seeds = self.seeds_
+        ds = [[la.norm(s - d) for s in seeds] for d in data]
+        return np.array(ds)
+    
+    def make_labels(self, data, seeds=None):
+        if seeds is None:
+            seeds = self.seeds_
+        ds = self.distances(data, seeds)
+        labels = np.argmin(ds, axis=1)
+        return labels
+    
+    def new_seeds(self, data, labels):
+        k = self.k_
+        inds = [np.argwhere(labels == _) for _ in range(k)]
+        new_seeds = [np.mean(data[i, :], axis=0) for i in inds]
+        return np.array(new_seeds)
+    
+    def error(self, data, labels):
+        seeds = self.seeds_
+        e = 0
+        for _ in range(labels.shape[0]):
+            l = labels[_]
+            e += la.norm(data[_] - seeds[l]) ** 2
+        return e
+    
+    def pick_random_seeds(self, data):
+        seed_ind = np.random.choice(
+            np.arange(data.shape[0]),
+            self.k_,
+            replace=False
+        )
+        seeds = data[seed_ind, :]
+        return seeds
