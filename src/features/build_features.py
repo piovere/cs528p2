@@ -60,8 +60,11 @@ class KMeans():
         self.k_ = None
         self.error_ = None
         self.conv_count_ = None
+        self.best_seed_ = None
+        self.num_starts_ = None
     
     def fit(self, data, k=3, num_starts=10):
+        self.num_starts_ = num_starts
         self.k_ = k
         # Pick `k` initial seeds
         self.seeds_ = self.pick_random_seeds(data)
@@ -85,6 +88,8 @@ class KMeans():
             if self.error(data, labels) < self.error_:
                 self.seeds_ = seeds
                 self.error_ = self.error(data, labels)
+                self.best_seed_ = i
+                self.conv_count_ = conv_count
     
     def predict(self, data):
         l = self.make_labels(data)
