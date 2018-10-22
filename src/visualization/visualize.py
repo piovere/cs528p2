@@ -1,4 +1,4 @@
-from src.features.build_features import PCA
+from src.features.build_features import PCA, KMeans
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
@@ -57,10 +57,49 @@ def label_point(x, y, val, ax):
                 fontdict={'size': 4})
 
 f = plt.figure(figsize=(20,20))
-with sns.axes_style("darkgrid"):
+with sns.axes_style("whitegrid"):
     ax = sns.relplot(x=0, y=1, data=df_pca)
     ax.set_xlabels("Principal component 0")
     ax.set_ylabels("Principal Component 1")
     label_point(df_pca[0], df_pca[1], df_pca.School, plt.gca())
 plt.savefig(os.path.join(plots_dir, "pc1_v_pc2.png"), dpi=300)
+plt.clf()
+
+# Clustering of raw data
+# Find optimal number of clusters
+k_array = [_ for _ in range(2, df_num.shape[0])]
+dunn_score = []
+for k in k_array:
+    kmt = KMeans()
+    kmt.fit(df_num.values, k)
+    di = kmt.dunn_index(df_num.values)
+    dunn_score.append(di)
+
+f = plt.figure()
+plt.plot(k_array, dunn_score)
+plt.xlabel("Number of clusters")
+plt.ylabel("Dunn Index")
+best_di = max(dunn_score)
+best_k = k_array[dunn_score.index(best_di)]
+plt.plot(best_k, best_di, 'ro')
+plt.annotate(
+    f"{best_k} clusters",
+    xy=(best_k, best_di), xycoords='data',
+    arrowprops=dict(facecolor='black', shrink=0.05),
+    xytext=(0.75, 0.75), textcoords='axes fraction',
+    horizontalalignment="center"
+)
+plt.savefig(os.path.join(plots_dir, "dunn_index_raw_data.png"), dpi=300)
+plt.clf()
+
+km = KMeans()
+km.fit(df_num.values, k=13)
+labels = km.predict(df_num)
+f = plt.figure(figsize=(20,20))
+with sns.axes_style("whitegrid"):
+    ax = sns.relplot(x=0, y=1, data=df_pca, hue=labels)
+    ax.set_xlabels("Principal component 0")
+    ax.set_ylabels("Principal Component 1")
+    label_point(df_pca[0], df_pca[1], df_pca.School, plt.gca())
+plt.savefig(os.path.join(plots_dir, "pc1_v_pc2_raw_hue.png"), dpi=300)
 plt.clf()
