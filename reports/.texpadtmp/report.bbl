@@ -1,0 +1,231 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.7 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{none/global/}
+    \entry{scikit-learn}{article}{}
+      \name{author}{16}{}{%
+        {{hash=22e2e571cc6356b3cb21d40e212ca6ac}{%
+           family={Pedregosa},
+           family_i={P\bibinitperiod},
+           given={F.},
+           given_i={F\bibinitperiod}}}%
+        {{hash=90a0a2720bfe73efd4029f8a456cdcc3}{%
+           family={Varoquaux},
+           family_i={V\bibinitperiod},
+           given={G.},
+           given_i={G\bibinitperiod}}}%
+        {{hash=386dd6e7464b390d92ce58cf04ba101c}{%
+           family={Gramfort},
+           family_i={G\bibinitperiod},
+           given={A.},
+           given_i={A\bibinitperiod}}}%
+        {{hash=ce3bf798cb091d3910827d51160fe0f8}{%
+           family={Michel},
+           family_i={M\bibinitperiod},
+           given={V.},
+           given_i={V\bibinitperiod}}}%
+        {{hash=b8fa2de348731073d50b89e07267e159}{%
+           family={Thirion},
+           family_i={T\bibinitperiod},
+           given={B.},
+           given_i={B\bibinitperiod}}}%
+        {{hash=1c2f66c39a6e2b2ca4d545348028a677}{%
+           family={Grisel},
+           family_i={G\bibinitperiod},
+           given={O.},
+           given_i={O\bibinitperiod}}}%
+        {{hash=f5652799b846fbd40ce19b83c70ef1d3}{%
+           family={Blondel},
+           family_i={B\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+        {{hash=8d2ca4be32fef4d9e848709878fcb757}{%
+           family={Prettenhofer},
+           family_i={P\bibinitperiod},
+           given={P.},
+           given_i={P\bibinitperiod}}}%
+        {{hash=56ac3785f81550a29a28d3abd746ecff}{%
+           family={Weiss},
+           family_i={W\bibinitperiod},
+           given={R.},
+           given_i={R\bibinitperiod}}}%
+        {{hash=cb070bdb80f3a6add15c62ca13a4a419}{%
+           family={Dubourg},
+           family_i={D\bibinitperiod},
+           given={V.},
+           given_i={V\bibinitperiod}}}%
+        {{hash=f1aa9e81c02f406a26762c8c85fdc1fb}{%
+           family={Vanderplas},
+           family_i={V\bibinitperiod},
+           given={J.},
+           given_i={J\bibinitperiod}}}%
+        {{hash=35a7037441ee9fd7ca45c2216a9cb080}{%
+           family={Passos},
+           family_i={P\bibinitperiod},
+           given={A.},
+           given_i={A\bibinitperiod}}}%
+        {{hash=39b253ebe84b96f6acd07b762d251ca1}{%
+           family={Cournapeau},
+           family_i={C\bibinitperiod},
+           given={D.},
+           given_i={D\bibinitperiod}}}%
+        {{hash=3c836162a7c1b02a3454bb2df2c57303}{%
+           family={Brucher},
+           family_i={B\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+        {{hash=980c432be67e1ca5879a0aee315ff2a9}{%
+           family={Perrot},
+           family_i={P\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+        {{hash=ad11ee93370bf63bb64684cfdff0836f}{%
+           family={Duchesnay},
+           family_i={D\bibinitperiod},
+           given={E.},
+           given_i={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{ffbedce77525c13eeb1c52ada09d43f3}
+      \strng{fullhash}{81371d66ce2cfb28d217f955948ace55}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Machine Learning Research}
+      \field{title}{Scikit-learn: Machine Learning in {P}ython}
+      \field{volume}{12}
+      \field{year}{2011}
+      \field{pages}{2825\bibrangedash 2830}
+      \range{pages}{6}
+    \endentry
+    \entry{Arthur2007}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9490d5d9532dc965f9f300a7a5c9fa13}{%
+           family={Arthur},
+           family_i={A\bibinitperiod},
+           given={David},
+           given_i={D\bibinitperiod}}}%
+        {{hash=b6fa64c3195f752823d0759db3cbca91}{%
+           family={Vassilvitskii},
+           family_i={V\bibinitperiod},
+           given={Sergei},
+           given_i={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{c59974bc84d7d18b3663c2ec2a4eaad7}
+      \strng{fullhash}{c59974bc84d7d18b3663c2ec2a4eaad7}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The k-means method is a widely used clustering technique that seeks to minimize the average squared distance between points in the same cluster. Although it offers no accuracy guarantees, its simplicity and speed are very appealing in practice. By augmenting k-means with a very simple, randomized seeding technique, we obtain an algorithm that is $\Theta$(logk)-competitive with the optimal clustering. Preliminary experiments show that our augmentation improves both the speed and the accuracy of k-means, often quite dramatically.}
+      \field{eprinttype}{arXiv}
+      \field{isbn}{9780898716245}
+      \field{issn}{978-0-898716-24-5}
+      \field{journaltitle}{Proc ACM-SIAM symposium on discrete algorithms.}
+      \field{number}{3}
+      \field{title}{{K-Means++: the Advantages of Careful Seeding}}
+      \field{volume}{8}
+      \field{year}{2007}
+      \field{pages}{1027\bibrangedash 35}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1145/1283383.1283494
+      \endverb
+      \verb{eprint}
+      \verb 1212.1121
+      \endverb
+      \verb{file}
+      \verb :Users/jrpl/Downloads/2006-13.pdf:pdf
+      \endverb
+    \endentry
+    \entry{dunn1974}{article}{}
+      \name{author}{1}{}{%
+        {{hash=eeaeeb6a4dd974e1e07d0dad1f5d3bb1}{%
+           family={Dunn†},
+           family_i={D\bibinitperiod},
+           given={J.\bibnamedelimi C.},
+           given_i={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor & Francis}%
+      }
+      \strng{namehash}{eeaeeb6a4dd974e1e07d0dad1f5d3bb1}
+      \strng{fullhash}{eeaeeb6a4dd974e1e07d0dad1f5d3bb1}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract Two separation indices are considered for partitions P = {X1, …, Xk} of a finite data set X in a general inner product space. Both indices increase as the pairwise distances between the subsets Xi become large compared to the diameters of Xi Maximally separated partitions p' are defined and it is shown that as the indices of p' increase without bound, the characteristic functions of Xi' in P' are approximated more and more closely by the membership functions in fuzzy partitions which minimize certain fuzzy extensions of the k-means squared error criterion function.}
+      \field{journaltitle}{Journal of Cybernetics}
+      \field{number}{1}
+      \field{title}{Well-Separated Clusters and Optimal Fuzzy Partitions}
+      \field{volume}{4}
+      \field{year}{1974}
+      \field{pages}{95\bibrangedash 104}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1080/01969727408546059
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1080/01969727408546059
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/01969727408546059
+      \endverb
+    \endentry
+    \entry{Yeung2000}{article}{}
+      \name{author}{2}{}{%
+        {{hash=f6d5e2fa9d40a098deea0f492c63625f}{%
+           family={Yeung},
+           family_i={Y\bibinitperiod},
+           given={K.Y.},
+           given_i={K\bibinitperiod}}}%
+        {{hash=b7f3f287311ac8d3ccc5b52244d7d95b}{%
+           family={Ruzzo},
+           family_i={R\bibinitperiod},
+           given={W.L.},
+           given_i={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{736c36014197aadc57bc5f8adc3bf66f}
+      \strng{fullhash}{736c36014197aadc57bc5f8adc3bf66f}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The purpose of this article is to demonstrate that multidimensional information technologies (ITs) technologies could manifest different patterns of evolution because each dimension could be exposed to different forces of variation and selection. Commercial banks that adopted online banking services in the USA during 1995-2000 are investigated. It is found that the technical dimension of online banking services tends to converge on some agreed upon practices, but the managerial dimension does not converge. This result implies that technical choices are less likely to offer opportunities for banks to differentiate one from another. The variation in managerial choices, however, allows banks to tailor their managerial practices to better support internal operations, which can generate competitive advantages for banks. Contrary to the traditional viewpoint that these environmental dimensions evolve in a uniform direction, the paper shows that multidimensional ITs manifest different patterns of evolution.}
+      \field{isbn}{13527606}
+      \field{journaltitle}{Department of Computer Science and Engineering, University of Washington.[Links]}
+      \field{title}{{An empirical study on principal component analysis for clustering gene expression data}}
+      \field{year}{2000}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1108/13527600610683390
+      \endverb
+      \verb{file}
+      \verb :Users/jrpl/Downloads/pca.pdf:pdf
+      \endverb
+      \verb{url}
+      \verb http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.5.8091%7B%5C&%7Drep=rep1%7B%5C&%7Dtype=pdf
+      \endverb
+      \keyw{bioinformatics,clustering,dimension reduction,gene expression analysis,principal component analysis,to appear}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

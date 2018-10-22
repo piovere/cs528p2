@@ -1,0 +1,8 @@
+\BOOKMARK [1][-]{section.1}{Objective}{}% 1
+\BOOKMARK [1][-]{section.2}{Preprocessing the data}{}% 2
+\BOOKMARK [1][-]{section.3}{PCA}{}% 3
+\BOOKMARK [1][-]{section.4}{K-means}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{K-means++}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Cluster selection}{section.4}% 6
+\BOOKMARK [1][-]{section.5}{PCA plus K-Means}{}% 7
+\BOOKMARK [1][-]{section.6}{Conclusions}{}% 8
