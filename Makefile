@@ -80,7 +80,8 @@ test_environment:
 # PROJECT RULES                                                                 #
 #################################################################################
 
-
+graphics: requirements
+	python src/visualization/visualize.py
 
 #################################################################################
 # Self Documenting Commands                                                     #
